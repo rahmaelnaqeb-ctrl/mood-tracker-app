@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracking App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="app-container">
+        <h1 id="user-greeting">Hello!</h1> 
+        <h2>How are you feeling today?</h2>
+
+        
+        <form id="mood-logger-form">
+            <h3>Log a New Mood Entry</h3>
+            <div>
+                <label for="entryDate">Date:</label>
+                <input type="date" id="entryDate" name="entryDate" required>
+            </div>
+
+            <div>
+                <label for="mood">Current Mood:</label>
+                <select id="mood" name="mood" required>
+                    <option value="" disabled selected>Select your feeling</option>
+                    <option value="Joyful">Joyful</option>
+                    <option value="Excited">Excited</option>
+                    <option value="Content">Content</option>
+                    <option value="Calm">Calm</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Tired">Tired</option>
+                    <option value="Stressed">Stressed</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="sleepHours">Hours of Sleep last night:</label>
+                <input type="number" id="sleepHours" name="sleepHours" min="0" max="15" step="0.5" required>
+            </div>
+
+            <div>
+                <label for="reflection">Reflection / Key Focus:</label>
+                <textarea id="reflection" name="reflection" rows="3" placeholder="What were your key thoughts or feelings today?"></textarea>
+            </div>
+            
+            <button type="submit">Log Entry</button>
+        </form>
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
+
+
+        <div class="dashboard-grid">
+            <div>
+                <h2 style="color: var(--color-text); font-weight: 700;">Today's Mood</h2>
+                <div id="today-mood-card">Loading...</div>
+
+                </div>
+            
+            <div>
+                <h2 style="color: var(--color-text); font-weight: 700;">Mood and sleep trends</h2>
+                <div id="mood-chart-container">
+                    <canvas id="moodChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
+        
+        <h2>User Settings</h2>
+        <form id="profile-settings-form" class="settings-form">
+            <div style="margin-bottom: 15px;">
+                <label for="userName" style="display: block; margin-bottom: 5px;">Update Name:</label>
+                <input type="text" id="userName" name="userName" value="Lisa" required>
+            </div>
+            <button type="submit">Save Profile Changes</button>
+            <p id="profile-status"></p>
+        </form>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+/* --- Global Reset and Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Global Color Variables */
+:root {
+    --color-primary: #6366f1; /* Indigo/Purple */
+    --color-secondary: #93c5fd; /* Lighter Blue */
+    --color-text: #1a202c;
+    --color-bg-light: #f4f6fa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-bg-light); 
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* --- App Container and Header Styling --- */
+#app-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 60px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+}
+
+#app-container h1 {
+    font-size: 2.5rem; 
+    margin-bottom: 5px; 
+    font-weight: 700;
+}
+
+#app-container h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #a0aec0; 
+    margin-bottom: 30px; 
+}
+
+
+/* --- Form and Input Styling --- */
+#mood-logger-form, .settings-form {
+    background-color: var(--color-bg-light);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+#mood-logger-form h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+#mood-logger-form div, .settings-form div {
+    margin-bottom: 15px;
+}
+
+#mood-logger-form label, .settings-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #4a5568;
+}
+
+#mood-logger-form input,
+#mood-logger-form select,
+#mood-logger-form textarea,
+.settings-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#mood-logger-form button, .settings-form button {
+    background-color: var(--color-primary); 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#mood-logger-form button:hover, .settings-form button:hover {
+    background-color: #4f46e5;
+}
+
+
+/* --- Dashboard Grid Layout --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr; 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* --- Today's Mood Card Styling --- */
+#today-mood-card {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; 
+    gap: 20px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f5;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.mood-text-area {
+    border-right: 1px solid #eee;
+    padding-right: 20px;
+}
+.mood-text-area p:first-child {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.mood-text-area h1 {
+    font-size: 3rem; 
+    margin: 0;
+}
+
+.mood-text-area span {
+    display: block; 
+    margin-top: 15px; 
+}
+.mood-text-area blockquote {
+    font-style: italic;
+    color: #4a5568; 
+    border-left: 3px solid var(--color-primary);
+    padding-left: 15px;
+    margin-top: 25px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.details-area div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--color-bg-light);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.details-area strong {
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-right: 10px;
+}
+.details-area p {
+    margin: 0;
+    font-weight: 700;
+}
+
+/* --- Averages Card Styling --- */
+.sleep-comparison {
+    margin-top: 30px;
+}
+
+.average-mood-card, .average-sleep-card {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px; 
+    color: white;
+}
+
+.average-mood-card {
+    background-color: var(--color-secondary); 
+}
+
+.average-sleep-card {
+    background-color: var(--color-primary); 
+}
+
+.average-mood-card p:first-child,
+.average-sleep-card p:first-child {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.average-mood-card p:nth-child(2),
+.average-sleep-card p:nth-child(2) {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.average-mood-card small,
+.average-sleep-card small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+
+/* --- Chart Card Styling --- */
+#mood-chart-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    min-height: 400px; 
+    position: relative;
+}
+
+/* ==================================== */
+/* RESPONSIVENESS              */
+/* ==================================== */
+
+/* --- Media Query for Tablets (Max Width 1024px) --- */
+@media (max-width: 1024px) {
+    #app-container {
+        margin: 20px;
+        padding: 30px;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr 1.5fr; 
+        gap: 20px;
+    }
+}
+
+/* --- Media Query for Mobile (Max Width 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Stack the Main Dashboard Grid */
+    .dashboard-grid {
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+    }
+
+    /* 2. Stack the Today's Mood Card (Text and Details) */
+    #today-mood-card {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Remove the vertical divider on mobile */
+    .mood-text-area {
+        border-right: none;
+        padding-right: 0;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee; 
+    }
+
+    /* Reduce padding on the main container */
+    #app-container {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    #mood-chart-container {
+        min-height: 300px; 
+    }
+}
